@@ -1,0 +1,8 @@
+{
+  "short_name": "use-controllable-state",
+  "name": "use-controllable-state",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
