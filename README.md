@@ -13,7 +13,7 @@ npm install --save use-controllable-state
 ## Usage
 
 ```tsx
-import { FC, MouseEventHandler } from 'react'
+import { FC } from 'react'
 import { useControllableState } from 'use-controllable-state';
 
 const Component: FC = (value: string, onChange) => {
