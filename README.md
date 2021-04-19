@@ -13,16 +13,24 @@ npm install --save use-controllable-state
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import { FC, MouseEventHandler } from 'react'
+import { useControllableState } from 'use-controllable-state';
 
-import MyComponent from 'use-controllable-state'
-import 'use-controllable-state/dist/index.css'
+const Component: FC = (value: string, onChange) => {
+  const [internalChanges, internalSetState] = useControllableState<string>(value, onChange);
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+  const handleClick = () => {
+    internalSetState("example of internal change to controlled state");
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>Change state internally</button>
+      <div>Last internal state change: {internalChanges}</div>
+      <div>Controlled state: {value}</div>
+    </div>
+  );
+};
 ```
 
 ## License
